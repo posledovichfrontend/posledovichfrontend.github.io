@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсовая работа</title>
+</head>
+
+<style>
+    
+
+.form-popup{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+}
+
+
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: center;
+  background: -webkit-linear-gradient(315deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
+  background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
+  font-family: Open Sans, Arial, sans-serif;
+  font-size: 1.3em;
+}
+
+
+.login-form {
+  width: 100%;
+  padding: 2em;
+  position: relative;
+  border-radius: 3px;
+  border: 3px solid #6200ff;
+  box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
+  background: #bc3220;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #bc3220), color-stop(29%, #db4a37), color-stop(50%, #db4a37), color-stop(71%, #db4a37), color-stop(100%, #bc3220));
+  background: -webkit-linear-gradient(left, #bc3220 0%, #db4a37 29%, #db4a37 50%, #db4a37 71%, #bc3220 100%);
+  background: linear-gradient(to right, #bc3220 0%, #db4a37 29%, #db4a37 50%, #db4a37 71%, #bc3220 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc3220', endColorstr='#bc3220', GradientType=1 );
+  position: absolute;
+}
+
+
+.form-popup {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  border-radius: 3px;
+  border: 3px solid #b12816;
+  box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
+  background:#6200ff;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc3220', endColorstr='#bc3220', GradientType=1 );
+}
+
+
+@media screen and (min-width: 600px) {
+  .login-form {
+    width: 50vw;
+    max-width: 15em;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  .form-popup {
+    max-width: 20em;
+    height: 20em;
+  }
+}
+
+.flex-row {
+  margin-bottom: 1em;
+}
+
+
+
+
+
+
+.lf--input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 1em 2em;
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: Open Sans, Arial, sans-serif;
+  text-shadow: 1px 1px 1px #232323;
+  border-radius: 25px;
+  background: #bc3220;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #bc3220), color-stop(100%, #fa5846));
+  background: -webkit-linear-gradient(top, #bc3220 0%, #fa5846 100%);
+  background: linear-gradient(to bottom, #bc3220 0%, #fa5846 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc3220', endColorstr='#fa5846', GradientType=0 );
+}
+
+.lf--input2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 1em 2em;
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: Open Sans, Arial, sans-serif;
+  text-shadow: 1px 1px 1px #232323;
+  border-radius: 25px;
+  background: #bc3220;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #bc3220), color-stop(100%, #fa5846));
+  background: -webkit-linear-gradient(top, #bc3220 0%, #fa5846 100%);
+  background: linear-gradient(to bottom, #bc3220 0%, #fa5846 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc3220', endColorstr='#fa5846', GradientType=0 );
+}
+
+
+.text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 1em 2em;
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: Open Sans, Arial, sans-serif;
+  text-shadow: 1px 1px 1px #232323;
+  border-radius: 25px;
+  background: #bc3220;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #bc3220), color-stop(100%, #fa5846));
+  background: -webkit-linear-gradient(top, #bc3220 0%, #fa5846 100%);
+  background: linear-gradient(to bottom, #bc3220 0%, #fa5846 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc3220', endColorstr='#fa5846', GradientType=0 );
+}
+
+.lf--submit {
+  display: block;
+  padding: 1em;
+  width: 100%;
+  box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
+  background: #ffbf00;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffbf00), color-stop(100%, #fa9f17));
+  background: -webkit-linear-gradient(top, #ffbf00 0%, #fa9f17 100%);
+  background: linear-gradient(to bottom, #ffbf00 0%, #fa9f17 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf00', endColorstr='#fa9f17', GradientType=0 );
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  margin-top: 50px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-shadow: -1px -1px #b86200, 0 1px 0 #ecb76b;
+}
+
+.lf--forgot {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
+    background: #6200ff;
+    border: 0;
+    border-radius: 30px;
+    color: #fff;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+
+
+.btn {
+  display: block;
+  padding: 1em;
+  width: 100%;
+  box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
+  background: #ffbf00;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffbf00), color-stop(100%, #fa9f17));
+  background: -webkit-linear-gradient(top, #ffbf00 0%, #fa9f17 100%);
+  background: linear-gradient(to bottom, #ffbf00 0%, #fa9f17 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf00', endColorstr='#fa9f17', GradientType=0 );
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  margin-top: 50px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-shadow: -1px -1px #b86200, 0 1px 0 #ecb76b;
+}
+
+.btn_cancel{
+    display: block;
+    padding: 1em;
+    width: 100%;
+    box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
+    background: #bc3220;
+    border: 0;
+    border-radius: 30px;
+    color: #fff;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+
+
+
+
+</style>
+
+    <body>
+        <form class='login-form'>
+            <div class="flex-row">
+                <input type ="username" class='lf--input' placeholder='Имя пользователя'>
+            </div>
+            <div class="flex-row">
+                <input type ="password" class='lf--input2' placeholder='Пароль'>
+            </div>
+            <button type="button" class='lf--submit' onclick="alerted();"> Войти</button>
+            <button type="button" class='lf--forgot' onclick="openForm()"> Регистрация</button>
+        </form>
+
+        <form class="form-popup" id="myForm">
+            <div class="name">
+                <input id="username2" class='text' placeholder='Ваше имя' type='text' required>
+            </div>
+            <div class="password">
+                <input id="username3" class='text' placeholder='Придумайте пароль' type='password' required>
+            </div>
+            <div class="password">
+                <input id="username4" class='text' placeholder='Повторите ваш пароль' type='password' required>
+            </div>
+             <input type="submit" class='lf--submit' onclick="alerted2();">
+            <button type="button" class="btn_cancel" onclick="closeForm()">Закрыть</button>
+        </form>
+        </div>
+        </div>
+        <script>
+            function alerted() {
+            
+            
+              let a = document.querySelector(".lf--input").value;
+              let b = document.querySelector(".lf--input2").value;
+              if (a === "саша" && b === "123"){
+                
+            
+                document.location.href = "katalog.html";
+            
+              }
+              else {
+                alert ("Ошибка! Неверный логин или пароль!")
+              }
+                
+              }
+            
+            function openForm() {
+              document.getElementById("myForm").style.display = "block";
+            }
+            function closeForm() {
+              document.getElementById("myForm").style.display = "none";
+            }
+            
+            </script>>
+
+
+    </body>
+
+</html>
